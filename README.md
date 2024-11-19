@@ -46,8 +46,49 @@
 ### Penggabungan node pertama (B)
 <img width="715" alt="layer B" src="https://github.com/user-attachments/assets/04d2b49d-fc91-445c-bc72-3628d4e38b39">
 
-|Subnet Akhir|Gabungan|Gabungan|Gabungan|Gabungan|Netmask Akhir|
-|---|---|---|---|---|---|
-|Subnet Akhir|1|1|2|2|Netmask Akhir|
-|Subnet Akhir|Subnet|Netmask|Subnet|Netmask|Netmask Akhir|
-|B1|A1|/25|A2|/30|/24|
+![image](https://github.com/user-attachments/assets/13753733-e61c-4929-b2f5-120bdfaf7799)
+
+### Penggabungan node kedua (C)
+<img width="715" alt="layer C" src="https://github.com/user-attachments/assets/8d70fa50-efc1-4b8e-90f4-ea9ebbfa3b33">
+
+![image](https://github.com/user-attachments/assets/2038422c-1f73-462b-8979-0f4bb5e02682)
+
+### Penggabungan node ketiga (D)
+<img width="715" alt="layer D" src="https://github.com/user-attachments/assets/35d807e6-faa8-4ca2-8d4f-8f1da1307136">
+
+![image](https://github.com/user-attachments/assets/7a179b24-81c1-4f54-946c-6564cb780965)
+
+### Penggabungan node keempat (E)
+<img width="715" alt="layer E" src="https://github.com/user-attachments/assets/a2e7f86d-6390-480e-bf36-f63e8569a986">
+
+![image](https://github.com/user-attachments/assets/cc24eedf-1228-4020-b45c-35c6690b5487)
+
+### Penggabungan node kelima (F)
+<img width="715" alt="layer F" src="https://github.com/user-attachments/assets/25cb069b-be46-4431-bba2-836846f26769">
+
+![image](https://github.com/user-attachments/assets/d88797f6-3439-4592-99e3-2b5f521ebe21)
+
+### Penggabungan node keenam (G)
+<img width="715" alt="layer G" src="https://github.com/user-attachments/assets/9be82061-dc8c-4acc-b461-7ac4fbcad11c">
+
+![image](https://github.com/user-attachments/assets/c1f2e960-f7c4-43ed-b0aa-197819aadd4a)
+
+### Penggabungan node ketujuh (H)
+<img width="715" alt="layer H" src="https://github.com/user-attachments/assets/2aca67cb-96cc-4269-b699-40e1fcc7cc1c">
+
+![image](https://github.com/user-attachments/assets/cbc6e04a-c5a1-47f9-9592-f0b9bdbf466f)
+
+### Penggabungan node kedelapan (I)
+<img width="715" alt="layer I" src="https://github.com/user-attachments/assets/66d6988f-33b2-4554-85d3-72ae1160af7b">
+
+![image](https://github.com/user-attachments/assets/5bfa20d8-a0f1-44bf-9929-63b722c0585d)
+
+### Penggabungan layer kesembilan (J)
+<img width="715" alt="layer J" src="https://github.com/user-attachments/assets/66c5998c-d84e-4cc4-8307-58ec2c40260c">
+
+![image](https://github.com/user-attachments/assets/bdcd3f7d-61b7-4d71-8b6a-a6df31db9ade)
+
+### Penggabungan layer terakhir (K)
+<img width="715" alt="layer K (FINAL)" src="https://github.com/user-attachments/assets/91550782-27f7-4194-8953-fd8957761622">
+
+![image](https://github.com/user-attachments/assets/24d518a6-deaa-43ed-b5a9-6d4417f019a3)
