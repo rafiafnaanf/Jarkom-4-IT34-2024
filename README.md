@@ -12,6 +12,7 @@
 
 ## Rute CIDR
 | Subnet | Rute | JumlahIP | Netmask |
+|---|---|---|---|
 |A1|GAMERS-Fubuki-Korone,Okayu,Mio|120|/25|
 |A2|GEN:1-GAMERS|2|30
 |A3|GEN:1-Member-FBKMatsuri,AkiHachama|470|/23|
