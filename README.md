@@ -37,9 +37,17 @@
 |A20|AREA15-Switch6-lofi, Moona, Risu|661|/22|
 |A21|Holo-ID-AREA15|2|/30|
 |A22|Hololive-Holo-ID|2|/30|
-|Total|4263||
+||Total|4263||
 
 ## Penggabungan IP CIDR
 ### Kondisi awal topologi CIDR (A)
 <img width="715" alt="layer A" src="https://github.com/user-attachments/assets/943cf8eb-8039-4f2c-80c1-6e59ae69375b">
 
+### Penggabungan node pertama (B)
+<img width="715" alt="layer B" src="https://github.com/user-attachments/assets/04d2b49d-fc91-445c-bc72-3628d4e38b39">
+
+|Subnet Akhir||Gabungan|Gabungan||Netmask Akhir|
+|Subnet Akhir|1||2||Netmask Akhir|
+|Subnet Akhir|Subnet|Netmask|Subnet|Netmask|Netmask Akhir|
+|---|---|---|---|
+|B1|A1|/25|A2|/30|/24|
