@@ -4,6 +4,8 @@
 |Raditya Hardian Santoso|5027231033|
 |Rafi Afnaan Fathurrahman|5027231040|
 
+# GNS - CIDR
+
 ## Topologi GNS CIDR
 <img width="715" alt="layer 0" src="https://github.com/user-attachments/assets/8985db22-ee97-46d6-8515-3688c07da833">
 
@@ -35,8 +37,9 @@
 |A20|AREA15-Switch6-lofi, Moona, Risu|661|/22|
 |A21|Holo-ID-AREA15|2|/30|
 |A22|Hololive-Holo-ID|2|/30|
-|Total||4263||
+|Total|4263||
 
-## Kondisi awal topologi CIDR (A)
+## Penggabungan IP CIDR
+### Kondisi awal topologi CIDR (A)
 <img width="715" alt="layer A" src="https://github.com/user-attachments/assets/943cf8eb-8039-4f2c-80c1-6e59ae69375b">
 
