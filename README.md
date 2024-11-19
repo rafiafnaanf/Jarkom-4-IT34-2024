@@ -49,5 +49,5 @@
 |Subnet Akhir||Gabungan|Gabungan||Netmask Akhir|
 |Subnet Akhir|1||2||Netmask Akhir|
 |Subnet Akhir|Subnet|Netmask|Subnet|Netmask|Netmask Akhir|
-|---|---|---|---|
+|---|---|---|---|---|---|
 |B1|A1|/25|A2|/30|/24|
