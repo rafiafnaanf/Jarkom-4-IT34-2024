@@ -8,8 +8,6 @@
 
 ## Topologi GNS CIDR
 <img width="715" alt="layer 0" src="https://github.com/user-attachments/assets/8985db22-ee97-46d6-8515-3688c07da833">
-## Topologi CPT VLSM
-![image](https://github.com/user-attachments/assets/2a25ec80-9118-45f5-b902-890207206597)
 
 ## Prefix IP
 `10.80.X.X`
@@ -94,3 +92,628 @@
 <img width="715" alt="layer K (FINAL)" src="https://github.com/user-attachments/assets/91550782-27f7-4194-8953-fd8957761622">
 
 ![image](https://github.com/user-attachments/assets/24d518a6-deaa-43ed-b5a9-6d4417f019a3)
+
+# CPT - VLSM
+
+## Topologi CPT VLSM
+![image](https://github.com/user-attachments/assets/2a25ec80-9118-45f5-b902-890207206597)
+
+## Tree VLSM
+
+![Copy of VLSM](https://github.com/user-attachments/assets/db9b36bb-c4bb-480e-bc0c-c97c24f30725)
+
+### Pembagian IP
+
+**Info :**
+* Used IPs : 4263 (52.05%)
+* Unused IPs : 3927 (47.94%)
+
+Subnet | Network ID | Netmask | Broadcast | Range IP
+|---|---|---|---|---|
+A1 | 10.80.19.72 | 255.255.255.252 | 10.80.19.75 | 10.80.19.73 - 10.80.19.74
+A2 | 10.80.19.92 | 255.255.255.252 | 10.80.19.95 | 10.80.19.93 - 10.80.19.94
+A3 | 10.80.8.0 | 255.255.252.0 | 10.80.11.255 | 10.80.8.1 - 10.80.11.254
+A4 | 10.80.19.96 | 255.255.255.252 | 10.80.19.99 | 10.80.19.97 - 10.80.19.98
+A5 | 10.80.18.192 | 255.255.255.192 | 10.80.18.255 | 10.80.18.193 - 10.80.18.254
+A6 | 10.80.19.100 | 255.255.255.252 | 10.80.19.103 | 10.80.19.101 - 10.80.19.102
+A7 | 10.80.16.0 | 255.255.254.0 | 10.80.17.255 | 10.80.16.1 - 10.80.17.254
+A8 | 10.80.19.104 | 255.255.255.252 | 10.80.19.107 | 10.80.19.105 - 10.80.19.106
+A9 | 10.80.19.64 | 255.255.255.248 | 10.80.19.71 | 10.80.19.65 - 10.80.19.70
+A10 | 10.80.19.32 | 255.255.255.240 | 10.80.19.47 | 10.80.19.33 - 10.80.19.46
+A11 | 10.80.0.0 | 255.255.248.0 | 10.80.7.255 | 10.80.0.1 - 10.80.7.254
+A12 | 10.80.14.0 | 255.255.254.0 | 10.80.15.255 | 10.80.14.1 - 10.80.15.254
+A13 | 10.80.19.76 | 255.255.255.252 | 10.80.19.79 | 10.80.19.77 - 10.80.19.78
+A14 | 10.80.18.0 | 255.255.255.128 | 10.80.18.127 | 10.80.18.1 - 10.80.18.126
+A15 | 10.80.19.80 | 255.255.255.252 | 10.80.19.83 | 10.80.19.81 - 10.80.19.82
+A16 | 10.80.19.84 | 255.255.255.252 | 10.80.19.87 | 10.80.19.85 - 10.80.19.86
+A17 | 10.80.19.0 | 255.255.255.224 | 10.80.19.31 | 10.80.19.1 - 10.80.19.30
+A18 | 10.80.19.88 | 255.255.255.252 | 10.80.19.91 | 10.80.19.89 - 10.80.19.90
+A19 | 10.80.12.0 | 255.255.254.0 | 10.80.13.255 | 10.80.12.1 - 10.80.13.254
+A20 | 10.80.19.48 | 255.255.255.248 | 10.80.19.55 | 10.80.19.49 - 10.80.19.54
+A21 | 10.80.19.56 | 255.255.255.248 | 10.80.19.63 | 10.80.19.57 - 10.80.19.62
+A22 | 10.80.18.128 | 255.255.255.192 | 10.80.18.191 | 10.80.18.129 - 10.80.18.190
+
+### Konfigurasi Subnetting
+
+#### Subnet A1
+
+**Hololive (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.73 255.255.255.252
+no shutdown
+```
+
+**Holo-ID (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.74 255.255.255.252
+no shutdown
+```
+
+#### Subnet A2
+
+**Holo-ID (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.93 255.255.255.252
+no shutdown
+```
+
+**AREA15 (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.94 255.255.255.252
+no shutdown
+```
+
+#### Subnet A3
+
+**AREA15 (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.8.1 255.255.252.0
+no shutdown
+```
+
+**Moona (Device)**
+```
+Interface fa0
+IP Address: 10.80.8.2
+Subnet Mask: 255.255.252.0
+Gateway: 10.80.8.1
+```
+
+**Risu (Device)**
+```
+Interface fa0
+IP Address: 10.80.8.3
+Subnet Mask: 255.255.252.0
+Gateway: 10.80.8.1
+```
+**lofi (Device)**
+```
+Interface fa0
+IP Address: 10.80.8.4
+Subnet Mask: 255.255.252.0
+Gateway: 10.80.8.1
+```
+
+#### Subnet A4
+
+**Holo-ID (Router)**
+```
+enable
+configure terminal
+interface fa1/0
+ip address 10.80.19.97 255.255.255.252
+no shutdown
+```
+
+**holoro (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.98 255.255.255.252
+no shutdown
+```
+
+#### Subnet A5
+
+**holoro (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.18.193 255.255.255.192
+no shutdown
+```
+
+**Ollie (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.194
+Subnet Mask: 255.255.255.192
+Gateway: 10.80.18.193
+```
+
+**Anya (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.195
+Subnet Mask: 255.255.255.192
+Gateway: 10.80.18.193
+```
+**Reine (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.196
+Subnet Mask: 255.255.255.192
+Gateway: 10.80.18.193
+```
+
+#### Subnet A6
+
+**Holo-ID (Router)**
+```
+enable
+configure terminal
+interface fa1/1
+ip address 10.80.19.101 255.255.255.252
+no shutdown
+```
+
+**holoh3ro (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.102 255.255.255.252
+no shutdown
+```
+
+#### Subnet A7
+
+**holoh3ro (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.16.1 255.255.254.0
+no shutdown
+```
+
+**Zeta (Device)**
+```
+Interface fa0
+IP Address: 10.80.16.2
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.16.1
+```
+
+**Kaela (Device)**
+```
+Interface fa0
+IP Address: 10.80.16.3
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.16.1
+```
+
+**Kobo (Device)**
+```
+Interface fa0
+IP Address: 10.80.16.4
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.16.1
+```
+
+#### Subnet A8
+
+**Hololive (Router)**
+```
+enable
+configure terminal
+interface fa1/0
+ip address 10.80.19.105 255.255.255.252
+no shutdown
+```
+
+**HoloJP (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.106 255.255.255.252
+no shutdown
+```
+
+#### Subnet A9
+
+**HoloJP (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.65 255.255.255.248
+no shutdown
+```
+
+**DEV_IS (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.66 255.255.255.248
+no shutdown
+```
+
+**GEN:0 (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.67 255.255.255.248
+no shutdown
+```
+
+#### Subnet A10
+
+**DEV_IS (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.33 255.255.255.240
+no shutdown
+```
+
+**Ririka_Rade (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.34
+Subnet Mask: 255.255.255.240
+Gateway: 10.80.19.33
+```
+
+**Ao (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.35
+Subnet Mask: 255.255.255.240
+Gateway: 10.80.19.33
+```
+
+**Hajime_Kanade (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.36
+Subnet Mask: 255.255.255.240
+Gateway: 10.80.19.33
+```
+
+#### Subnet A11
+
+**GEN:0 (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.0.1 255.255.248.0
+no shutdown
+```
+
+**GEN:1 (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.0.2 255.255.248.0
+no shutdown
+```
+
+**MiComet (Device)**
+```
+Interface fa0
+IP Address: 10.80.0.3
+Subnet Mask: 255.255.248.0
+Gateway: 10.80.0.1
+```
+
+**Sora_Robo_AZK (Device)**
+```
+Interface fa0
+IP Address: 10.80.0.4
+Subnet Mask: 255.255.248.0
+Gateway: 10.80.0.1
+```
+
+
+#### Subnet A12
+
+**GEN:1 (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.14.1 255.255.254.0
+no shutdown
+```
+
+**FBK_Matsuri (Device)**
+```
+Interface fa0
+IP Address: 10.80.14.2
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.14.1
+```
+
+**Aki_Hachama (Device)**
+```
+Interface fa0
+IP Address: 10.80.14.3
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.14.1
+```
+
+#### Subnet A13
+
+**GEN:1 (Router)**
+```
+enable
+configure terminal
+interface fa1/0
+ip address 10.80.19.77 255.255.255.252
+no shutdown
+```
+
+**GAMERS (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.78 255.255.255.252
+no shutdown
+```
+
+#### Subnet A14
+
+**GAMERS (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.18.1 255.255.255.128
+no shutdown
+```
+
+**Kerone (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.2
+Subnet Mask: 255.255.255.128
+Gateway: 10.80.18.1
+```
+
+**Okayu (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.3
+Subnet Mask: 255.255.255.128
+Gateway: 10.80.18.1
+```
+
+**Mio (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.4
+Subnet Mask: 255.255.255.128
+Gateway: 10.80.18.1
+```
+
+#### Subnet A15
+
+**Hololive (Router)**
+```
+enable
+configure terminal
+interface fa1/1
+ip address 10.80.19.81 255.255.255.252
+no shutdown
+```
+
+**HoloEN (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.82 255.255.255.252
+no shutdown
+```
+
+#### Subnet A16
+
+**HoloEN (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.85 255.255.255.252
+no shutdown
+```
+
+**HoloAdvent (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.86 255.255.255.252
+no shutdown
+```
+
+#### Subnet A17
+
+**HoloAdvent (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.1 255.255.255.224
+no shutdown
+```
+
+**FuwaMoco (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.2
+Subnet Mask: 255.255.224.0
+Gateway: 10.80.19.1
+```
+
+**Shiori_Nerissa (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.3
+Subnet Mask: 255.255.224.0
+Gateway: 10.80.19.1
+```
+
+**Biboo (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.4
+Subnet Mask: 255.255.224.0
+Gateway: 10.80.19.1
+```
+
+#### Subnet A18
+
+**HoloEN (Router)**
+```
+enable
+configure terminal
+interface fa1/0
+ip address 10.80.19.89 255.255.255.252
+no shutdown
+```
+
+**Holo-Myth (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.90 255.255.255.252
+no shutdown
+```
+
+#### Subnet A19
+
+**Holo-Myth (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.12.1 255.255.254.0
+no shutdown
+```
+
+**Gura_Ame_Ina (Device)**
+```
+Interface fa0
+IP Address: 10.80.12.2
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.12.1
+```
+
+**Kiara_Calli (Device)**
+```
+Interface fa0
+IP Address: 10.80.12.3
+Subnet Mask: 255.255.254.0
+Gateway: 10.80.12.1
+```
+
+#### Subnet A20
+
+**Holo-Myth (Router)**
+```
+enable
+configure terminal
+interface fa1/0
+ip address 10.80.19.49 255.255.255.248
+no shutdown
+```
+
+**Project-Hope (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.50 255.255.255.248
+no shutdown
+```
+
+**Holo-Council (Router)**
+```
+enable
+configure terminal
+interface fa0/0
+ip address 10.80.19.51 255.255.255.248
+no shutdown
+```
+
+#### Subnet A21
+
+**Project-Hope (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.19.57 255.255.255.248
+no shutdown
+```
+
+**Irys (Device)**
+```
+Interface fa0
+IP Address: 10.80.19.58
+Subnet Mask: 255.255.255.248
+Gateway: 10.80.19.57
+```
+
+#### Subnet A22
+
+**Holo-Council (Router)**
+```
+enable
+configure terminal
+interface fa0/1
+ip address 10.80.18.129 255.255.255.192
+no shutdown
+```
+
+**Kronii_Mumei (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.130
+Subnet Mask: 255.255.255.192
+Gateway: 10.80.18.129
+```
+
+**Bae_Fauna (Device)**
+```
+Interface fa0
+IP Address: 10.80.18.131
+Subnet Mask: 255.255.255.192
+Gateway: 10.80.18.129
+```
