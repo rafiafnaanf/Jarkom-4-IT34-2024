@@ -8,6 +8,8 @@
 
 ## Topologi GNS CIDR
 <img width="715" alt="layer 0" src="https://github.com/user-attachments/assets/8985db22-ee97-46d6-8515-3688c07da833">
+## Topologi CPT VLSM
+![image](https://github.com/user-attachments/assets/2a25ec80-9118-45f5-b902-890207206597)
 
 ## Prefix IP
 `10.80.X.X`
