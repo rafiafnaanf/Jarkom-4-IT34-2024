@@ -93,6 +93,9 @@
 
 ![image](https://github.com/user-attachments/assets/24d518a6-deaa-43ed-b5a9-6d4417f019a3)
 
+## Tree CIDR
+![jarkomit34modul4 drawio](https://github.com/user-attachments/assets/23607783-58fe-4b99-9c29-ffba8d42bb11)
+
 # CPT - VLSM
 
 ## Topologi CPT VLSM
